@@ -1,4 +1,4 @@
-import { GET_DATA, UPDATE_HIGHLIGHTS } from "../actions/action";
+import { GET_DATA, UPDATE_HIGHLIGHTS, SET_ERROR } from "../actions/action";
 
 const initialState = {
   highlights: [],
@@ -16,7 +16,15 @@ export const rootReducer = (state = initialState, action) => {
     case UPDATE_HIGHLIGHTS:
       return {
         ...state,
-        highlights: action.payload
+        highlights: action.payload,
+        isFetchingData: false
+
+      }
+    case SET_ERROR:
+      return {
+        ...state,
+        isFetchingData: false,
+        error: action.payload
       }
     default:
       return state
