@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-const SoccerVideos = () => {
-  useEffect(() => {
+import { getData } from "../actions/action";
 
+const SoccerVideos = props => {
+  useEffect(() => {
+    getData()
   }, [])
 
   return (
     <>
-      <h3>Soccer Videos</h3>
+      {props.erros ? (<div >{props.error}</div>) : (
+        props.highlights.map(highlight => <div>{highlight}</div>)
+      )}
     </>
   )
 
@@ -16,8 +20,9 @@ const SoccerVideos = () => {
 
 const mapStateToProps = state => {
   return {
-    highlights: state.highlights
+    highlights: state.highlights,
+    error: state.error
   }
 }
 
-export default SoccerVideos;
+export default connect(mapStateToProps, {})(SoccerVideos)
