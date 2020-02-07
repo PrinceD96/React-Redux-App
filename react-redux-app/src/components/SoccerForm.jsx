@@ -5,15 +5,8 @@ const SoccerForm = () => {
 		<>
 			<form>
 				<fieldset>
-					<legend>Pick a league</legend>
-					<select>
-						<option value='premier'>Premier League</option>
-						<option value='laLiga'>La Liga</option>
-						<option value='bundesliga'>Bundesliga</option>
-						<option value='serieA'>Serie A</option>
-						<option value='ligue1'>Ligue 1</option>
-						<option value='all'>All Competitions</option>
-					</select>
+					<legend>Watch your favorite team</legend>
+					<input type="text" id="team" placeholder="Your team name" />
 				</fieldset>
 			</form>
 		</>
