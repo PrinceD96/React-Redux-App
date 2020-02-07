@@ -20,7 +20,9 @@ const SoccerVideos = props => {
                 header={highlight.title}
                 description={highlight.competition.name}
                 extra={highlight.date}
+
               />
+
             )
           })
         )}
