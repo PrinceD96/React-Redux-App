@@ -12,11 +12,10 @@ const SoccerForm = props => {
 	return (
 		<>
 			<form onSubmit={handleGetData}>
-				<fieldset>
-					<legend>Watch your favorite team</legend>
-					<input type="text" id="team" placeholder="Your team name" />
-					<button type="submit">Watch</button>
-				</fieldset>
+
+
+				<button type="submit">Watch</button>
+
 			</form>
 		</>
 	);
